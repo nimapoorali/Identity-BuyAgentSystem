@@ -1,0 +1,499 @@
+{
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:5000",
+    "Names": {
+      "us": "/gateway",
+      "ds": "/api",
+      "identity_us": "/v1/identity",
+      "identity_ds": "/v1/identity",
+      "buyagent_us": "/v1/buyagent",
+      "buyagent_ds": "/v1/buyagent"
+    },
+    "Hosts": {
+      "identity": "https://localhost:7288",
+      "buyAgent": "https://localhost:7048"
+    }
+  },
+  "Routes": [
+    //Identity.Roles services
+    {
+      "DownstreamPathTemplate": "[ds][identity_ds]/roles",
+      //"DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "[identity]"
+          //"Host": "localhost",
+          //"Port": 7288
+        }
+      ],
+      "UpstreamPathTemplate": "[us][identity_us]/roles",
+      "UpstreamHttpMethod": [ "get", "post" ]
+    },
+    {
+      "DownstreamPathTemplate": "[ds][identity_ds]/roles/{id}",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "[identity]"
+        }
+      ],
+      "UpstreamPathTemplate": "[us][identity_us]/roles/{id}",
+      "UpstreamHttpMethod": [ "delete", "get", "put" ]
+    },
+    {
+      "DownstreamPathTemplate": "[ds][identity_ds]/roles/{id}/activate",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "[identity]"
+        }
+      ],
+      "UpstreamPathTemplate": "[us][identity_us]/roles/{id}/activate",
+      "UpstreamHttpMethod": [ "patch" ]
+    },
+    {
+      "DownstreamPathTemplate": "[ds][identity_ds]/roles/{id}/deactivate",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "[identity]"
+        }
+      ],
+      "UpstreamPathTemplate": "[us][identity_us]/roles/{id}/deactivate",
+      "UpstreamHttpMethod": [ "patch" ]
+    },
+    {
+      "DownstreamPathTemplate": "[ds][identity_ds]/roles/{id}/suspend",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "[identity]"
+        }
+      ],
+      "UpstreamPathTemplate": "[us][identity_us]/roles/{id}/suspend",
+      "UpstreamHttpMethod": [ "patch" ]
+    },
+    //Identity.Users services
+    {
+      "DownstreamPathTemplate": "[ds][identity_ds]/users",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "[identity]"
+        }
+      ],
+      "UpstreamPathTemplate": "[us][identity_us]/users",
+      "UpstreamHttpMethod": [ "get", "post" ]
+    },
+    {
+      "DownstreamPathTemplate": "[ds][identity_ds]/users/{id}",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "[identity]"
+        }
+      ],
+      "UpstreamPathTemplate": "[us][identity_us]/users/{id}",
+      "UpstreamHttpMethod": [ "get", "patch", "delete" ]
+    },
+    {
+      "DownstreamPathTemplate": "[ds][identity_ds]/users/{id}/roles",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "[identity]"
+        }
+      ],
+      "UpstreamPathTemplate": "[us][identity_us]/users/{id}/roles",
+      "UpstreamHttpMethod": [ "get", "put", "delete" ]
+    },
+    {
+      "DownstreamPathTemplate": "[ds][identity_ds]/users/{id}/activate",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "[identity]"
+        }
+      ],
+      "UpstreamPathTemplate": "[us][identity_us]/users/{id}/activate",
+      "UpstreamHttpMethod": [ "patch" ]
+    },
+    {
+      "DownstreamPathTemplate": "[ds][identity_ds]/users/{id}/deactivate",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "[identity]"
+        }
+      ],
+      "UpstreamPathTemplate": "[us][identity_us]/users/{id}/deactivate",
+      "UpstreamHttpMethod": [ "patch" ]
+    },
+    {
+      "DownstreamPathTemplate": "[ds][identity_ds]/users/{id}/suspend",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "[identity]"
+        }
+      ],
+      "UpstreamPathTemplate": "[us][identity_us]/users/{id}/suspend",
+      "UpstreamHttpMethod": [ "patch" ]
+    },
+    {
+      "DownstreamPathTemplate": "[ds][identity_ds]/users/{id}/mobile",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "[identity]"
+        }
+      ],
+      "UpstreamPathTemplate": "[us][identity_us]/users/{id}/mobile",
+      "UpstreamHttpMethod": [ "patch", "delete" ]
+    },
+    {
+      "DownstreamPathTemplate": "[ds][identity_ds]/users/{id}/email",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "[identity]"
+        }
+      ],
+      "UpstreamPathTemplate": "[us][identity_us]/users/{id}/email",
+      "UpstreamHttpMethod": [ "patch", "delete" ]
+    },
+    {
+      "DownstreamPathTemplate": "[ds][identity_ds]/users/{id}/mobile/verification-key",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "[identity]"
+        }
+      ],
+      "UpstreamPathTemplate": "[us][identity_us]/users/{id}/mobile/verification-key",
+      "UpstreamHttpMethod": [ "post" ]
+    },
+    {
+      "DownstreamPathTemplate": "[ds][identity_ds]/users/{id}/email/verification-key",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "[identity]"
+        }
+      ],
+      "UpstreamPathTemplate": "[us][identity_us]/users/{id}/email/verification-key",
+      "UpstreamHttpMethod": [ "post" ]
+    },
+    {
+      "DownstreamPathTemplate": "[ds][identity_ds]/users/{id}/mobile/verification-key/{key}",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "[identity]"
+        }
+      ],
+      "UpstreamPathTemplate": "[us][identity_us]/users/{id}/mobile/verification-key/{key}",
+      "UpstreamHttpMethod": [ "patch" ]
+    },
+    {
+      "DownstreamPathTemplate": "[ds][identity_ds]/users/{id}/email/verification-key/{key}",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "[identity]"
+        }
+      ],
+      "UpstreamPathTemplate": "[us][identity_us]/users/{id}/email/verification-key/{key}",
+      "UpstreamHttpMethod": [ "patch" ]
+    },
+    //Identity.Mobiles services
+    {
+      "DownstreamPathTemplate": "[ds][identity_ds]/mobiles",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "[identity]"
+        }
+      ],
+      "UpstreamPathTemplate": "[us][identity_us]/mobiles",
+      "UpstreamHttpMethod": [ "post" ]
+    },
+    {
+      "DownstreamPathTemplate": "[ds][identity_ds]/mobiles/{mobile}/activation-key",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "[identity]"
+        }
+      ],
+      "UpstreamPathTemplate": "[us][identity_us]/mobiles/{mobile}/activation-key",
+      "UpstreamHttpMethod": [ "post" ]
+    },
+    {
+      "DownstreamPathTemplate": "[ds][identity_ds]/mobiles/{mobile}/activation-key/{key}",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "[identity]"
+        }
+      ],
+      "UpstreamPathTemplate": "[us][identity_us]/mobiles/{mobile}/activation-key/{key}",
+      "UpstreamHttpMethod": [ "patch" ]
+    },
+    {
+      "DownstreamPathTemplate": "[ds][identity_ds]/mobiles/{mobile}/verification-key",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "[identity]"
+        }
+      ],
+      "UpstreamPathTemplate": "[us][identity_us]/mobiles/{mobile}/verification-key",
+      "UpstreamHttpMethod": [ "post" ]
+    },
+    {
+      "DownstreamPathTemplate": "[ds][identity_ds]/mobiles/{mobile}/verification-key/{key}",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "[identity]"
+        }
+      ],
+      "UpstreamPathTemplate": "[us][identity_us]/mobiles/{mobile}/verification-key/{key}",
+      "UpstreamHttpMethod": [ "patch" ]
+    },
+    //Identity.Emails services
+    {
+      "DownstreamPathTemplate": "[ds][identity_ds]/emails",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "[identity]"
+        }
+      ],
+      "UpstreamPathTemplate": "[us][identity_us]/emails",
+      "UpstreamHttpMethod": [ "post" ]
+    },
+    {
+      "DownstreamPathTemplate": "[ds][identity_ds]/emails/{email}/activation-key",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "[identity]"
+        }
+      ],
+      "UpstreamPathTemplate": "[us][identity_us]/emails/{email}/activation-key",
+      "UpstreamHttpMethod": [ "post" ]
+    },
+    {
+      "DownstreamPathTemplate": "[ds][identity_ds]/emails/{email}/activation-key/{key}",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "[identity]"
+        }
+      ],
+      "UpstreamPathTemplate": "[us][identity_us]/emails/{email}/activation-key/{key}",
+      "UpstreamHttpMethod": [ "patch" ]
+    },
+    {
+      "DownstreamPathTemplate": "[ds][identity_ds]/emails/{email}/verification-key",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "[identity]"
+        }
+      ],
+      "UpstreamPathTemplate": "[us][identity_us]/emails/{email}/verification-key",
+      "UpstreamHttpMethod": [ "post" ]
+    },
+    {
+      "DownstreamPathTemplate": "[ds][identity_ds]/emails/{email}/verification-key/{key}",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "[identity]"
+        }
+      ],
+      "UpstreamPathTemplate": "[us][identity_us]/emails/{email}/verification-key/{key}",
+      "UpstreamHttpMethod": [ "patch" ]
+    },
+    //Identity.Auth services
+    {
+      "DownstreamPathTemplate": "[ds][identity_ds]/auth/token",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "[identity]"
+        }
+      ],
+      "UpstreamPathTemplate": "[us][identity_us]/auth/token",
+      "UpstreamHttpMethod": [ "post" ]
+    },
+    {
+      "DownstreamPathTemplate": "[ds][identity_ds]/auth/mobile-token",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "[identity]"
+        }
+      ],
+      "UpstreamPathTemplate": "[us][identity_us]/auth/mobile-token",
+      "UpstreamHttpMethod": [ "post" ]
+    },
+    {
+      "DownstreamPathTemplate": "[ds][identity_ds]/auth/mobile-tokens",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "[identity]"
+        }
+      ],
+      "UpstreamPathTemplate": "[us][identity_us]/auth/mobile-tokens",
+      "UpstreamHttpMethod": [ "post" ]
+    },
+    {
+      "DownstreamPathTemplate": "[ds][identity_ds]/auth/email-token",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "[identity]"
+        }
+      ],
+      "UpstreamPathTemplate": "[us][identity_us]/auth/email-token",
+      "UpstreamHttpMethod": [ "post" ]
+    },
+    {
+      "DownstreamPathTemplate": "[ds][identity_ds]/auth/email-tokens",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "[identity]"
+        }
+      ],
+      "UpstreamPathTemplate": "[us][identity_us]/auth/email-tokens",
+      "UpstreamHttpMethod": [ "post" ]
+    },
+    {
+      "DownstreamPathTemplate": "[ds][identity_ds]/secured/data",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "[identity]"
+        }
+      ],
+      "UpstreamPathTemplate": "[us][identity_us]/secured/data",
+      "UpstreamHttpMethod": [ "get" ]
+    },
+    {
+      "DownstreamPathTemplate": "[ds][identity_ds]/secured/special-data",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "[identity]"
+        }
+      ],
+      "UpstreamPathTemplate": "[us][identity_us]/secured/special-data",
+      "UpstreamHttpMethod": [ "get" ]
+    },
+    //Identity.Permissions services
+    {
+      "DownstreamPathTemplate": "[ds][identity_ds]/permissions",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "[identity]"
+        }
+      ],
+      "UpstreamPathTemplate": "[us][identity_us]/permissions",
+      "UpstreamHttpMethod": [ "get", "post" ]
+    },
+    {
+      "DownstreamPathTemplate": "[ds][identity_ds]/permissions/{id}",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "[identity]"
+        }
+      ],
+      "UpstreamPathTemplate": "[us][identity_us]/permissions/{id}",
+      "UpstreamHttpMethod": [ "delete", "get", "put" ]
+    },
+    {
+      "DownstreamPathTemplate": "[ds][identity_ds]/permissions/{id}/activate",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "[identity]"
+        }
+      ],
+      "UpstreamPathTemplate": "[us][identity_us]/permissions/{id}/activate",
+      "UpstreamHttpMethod": [ "patch" ]
+    },
+    {
+      "DownstreamPathTemplate": "[ds][identity_ds]/permissions/{id}/deactivate",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "[identity]"
+        }
+      ],
+      "UpstreamPathTemplate": "[us][identity_us]/permissions/{id}/deactivate",
+      "UpstreamHttpMethod": [ "patch" ]
+    },
+    {
+      "DownstreamPathTemplate": "[ds][identity_ds]/permissions/{id}/suspend",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "[identity]"
+        }
+      ],
+      "UpstreamPathTemplate": "[us][identity_us]/permissions/{id}/suspend",
+      "UpstreamHttpMethod": [ "patch" ]
+    },
+    {
+      "DownstreamPathTemplate": "[ds][identity_ds]/permissions/{id}/roles",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "[identity]"
+        }
+      ],
+      "UpstreamPathTemplate": "[us][identity_us]/permissions/{id}/roles",
+      "UpstreamHttpMethod": [ "get", "put", "delete" ]
+    },
+    //BuyAgent.Auth services
+    {
+      "DownstreamPathTemplate": "[ds][buyagent_ds]/auth/token",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "[buyAgent]"
+        }
+      ],
+      "UpstreamPathTemplate": "[us][buyagent_us]/auth/token",
+      "UpstreamHttpMethod": [ "post" ]
+    },
+    {
+      "DownstreamPathTemplate": "[ds][buyagent_ds]/auth/mobile-token",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "[buyAgent]"
+        }
+      ],
+      "UpstreamPathTemplate": "[us][buyagent_us]/auth/mobile-token",
+      "UpstreamHttpMethod": [ "post" ]
+    },
+    {
+      "DownstreamPathTemplate": "[ds][buyagent_ds]/auth/mobile-tokens",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "[buyAgent]"
+        }
+      ],
+      "UpstreamPathTemplate": "[us][buyagent_us]/auth/mobile-tokens",
+      "UpstreamHttpMethod": [ "post" ]
+    },
+    {
+      "DownstreamPathTemplate": "[ds][buyagent_ds]/auth/email-token",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "[buyAgent]"
+        }
+      ],
+      "UpstreamPathTemplate": "[us][buyagent_us]/auth/email-token",
+      "UpstreamHttpMethod": [ "post" ]
+    },
+    {
+      "DownstreamPathTemplate": "[ds][buyagent_ds]/auth/email-tokens",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "[buyAgent]"
+        }
+      ],
+      "UpstreamPathTemplate": "[us][buyagent_us]/auth/email-tokens",
+      "UpstreamHttpMethod": [ "post" ]
+    },
+    {
+      "DownstreamPathTemplate": "[ds][buyagent_ds]/secured/data",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "[buyAgent]"
+        }
+      ],
+      "UpstreamPathTemplate": "[us][buyagent_us]/secured/data",
+      "UpstreamHttpMethod": [ "get" ]
+    },
+    {
+      "DownstreamPathTemplate": "[ds][buyagent_ds]/secured/special-data",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "[buyAgent]"
+        }
+      ],
+      "UpstreamPathTemplate": "[us][buyagent_us]/secured/special-data",
+      "UpstreamHttpMethod": [ "get" ]
+    }
+  ]
+}
