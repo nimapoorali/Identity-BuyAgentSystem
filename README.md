@@ -1,6 +1,6 @@
 My name is Nima Poorali and I'm really interested in developing new applications and services by modern technologies.
 
-I'm an experienced .NET Developer and I'd like to share sample implementions of some features, services besides complying with software engineering and developing rules and principles that are worthy to be discussed about.
+I'm an experienced .NET Developer and I'd like to share sample implementions of some features, services that are worthy to be discussed about besides complying with software engineering and developing rules & principles.
 
   So, what will you observe by reviewing this repository?
   
@@ -28,4 +28,6 @@ I'm an experienced .NET Developer and I'd like to share sample implementions of 
         8- Microsoft EntityFramework Core
         9- In Memory Cache
         10- gRPC (Google Remote Procedure Call)
+        11- Fluent Api
+        12- Mapster
         
