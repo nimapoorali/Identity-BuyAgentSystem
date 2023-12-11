@@ -12,14 +12,20 @@ I'm an experienced .NET Developer and I'd like to share sample implementions of 
         3- DDD (Domain Driven Design)
         4- CQRS (Command & Query Responsibility Segregation)
         5- SOLID Principles
-        6- Code-First implementation of data layer 
+        6- Code-First implementation of data layer
+        7- Repository & Unit Of Work Design Patterns
+        8- RESTful APIs
+        9- API Gateway
 
     Features:
-        3- API Gateway
-        3- Ocelot
-        4- Web Api
-        5- Localization and resource files
-        6- Authenticate and authorize requests
-        7- JWT implementaion
-        8- Microsoft DependecyInjection
-        9- Microsoft EntityFramework Core
+        1- Web Api
+        2- Ocelot
+        3- MediatR
+        4- Localization and resource files
+        5- Authenticate and authorize requests
+        6- JWT implementaion
+        7- Microsoft DependecyInjection
+        8- Microsoft EntityFramework Core
+        9- In Memory Cache
+        10- gRPC (Google Remote Procedure Call)
+        
