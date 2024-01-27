@@ -1,12 +1,13 @@
 ﻿using Identity.Domain.Models.Aggregates.Roles;
 using Identity.Domain.Models.Aggregates.Users;
 using Identity.Domain.Models.Aggregates.Users.ValueObjects;
-using Identity.Domain.Models.SeedWork;
-using Identity.Domain.Models.SharedKernel;
+using NP.Shared.Domain.Models.SeedWork;
+using NP.Shared.Domain.Models.SharedKernel;
 using Identity.Resources;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using NP.Common;
+using NP.Resources;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -53,19 +54,19 @@ namespace Identity.Infrastructure.Persistence.Configurations
                {
                    userMobile.Property(mobile => mobile.Value)
                    .IsRequired(false)
-                   .HasColumnName(IdentityDataDictionary.Mobile);
+                   .HasColumnName(SharedDataDictionary.Mobile);
 
                    userMobile.Property(mobile => mobile.IsVerified)
                    .IsRequired(true)
-                   .HasColumnName(IdentityDataDictionary.MobileIsVerified);
+                   .HasColumnName(SharedDataDictionary.MobileIsVerified);
 
                    userMobile.Property(mobile => mobile.VerificationKey)
                    .IsRequired(false)
-                   .HasColumnName(IdentityDataDictionary.MobileVerificationKey);
+                   .HasColumnName(SharedDataDictionary.MobileVerificationKey);
 
                    userMobile.Property(mobile => mobile.KeyExpirationDate)
                    .IsRequired(false)
-                   .HasColumnName(IdentityDataDictionary.MobileKeyExpirationDate)
+                   .HasColumnName(SharedDataDictionary.MobileKeyExpirationDate)
                    .HasConversion(model => model.Value, db => DateTimeP.Create(db));
                });
 
@@ -75,16 +76,16 @@ namespace Identity.Infrastructure.Persistence.Configurations
                 {
                     userEmail.Property(email => email.Value)
                     .IsRequired(false)
-                    .HasColumnName(IdentityDataDictionary.Email);
+                    .HasColumnName(SharedDataDictionary.Email);
                     userEmail.Property(email => email.IsVerified)
                     .IsRequired(true)
-                    .HasColumnName(IdentityDataDictionary.EmailIsVerified);
+                    .HasColumnName(SharedDataDictionary.EmailIsVerified);
                     userEmail.Property(email => email.VerificationKey)
                     .IsRequired(false)
-                    .HasColumnName(IdentityDataDictionary.EmailVerificationKey);
+                    .HasColumnName(SharedDataDictionary.EmailVerificationKey);
                     userEmail.Property(email => email.KeyExpirationDate)
                     .IsRequired(false)
-                    .HasColumnName(IdentityDataDictionary.EmailKeyExpirationDate)
+                    .HasColumnName(SharedDataDictionary.EmailKeyExpirationDate)
                     .HasConversion(model => model.Value, db => DateTimeP.Create(db));
                 });
 

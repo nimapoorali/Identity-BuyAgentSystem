@@ -1,6 +1,6 @@
 ﻿using FluentResults;
 using Identity.Domain.Models.Abstraction.Roles;
-using Identity.Domain.Models.SeedWork;
+using NP.Shared.Domain.Models.SeedWork;
 using Identity.Resources;
 using MediatR;
 using NP.Resources;

@@ -1,5 +1,5 @@
 ﻿using Identity.Application.Abstraction;
-using Identity.Domain.Models.SeedWork;
+using NP.Shared.Domain.Models.SeedWork;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

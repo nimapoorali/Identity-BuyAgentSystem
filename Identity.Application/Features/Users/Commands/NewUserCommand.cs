@@ -3,8 +3,8 @@ using Identity.Application.Abstraction;
 using Identity.Application.Features.Users.Commands.ViewModels;
 using Identity.Domain.Models.Abstraction.Users;
 using Identity.Domain.Models.Aggregates.Users;
-using Identity.Domain.Models.SeedWork;
-using Identity.Domain.Models.SharedKernel;
+using NP.Shared.Domain.Models.SeedWork;
+using NP.Shared.Domain.Models.SharedKernel;
 using Mapster;
 using MediatR;
 using NP.Common;
@@ -57,12 +57,12 @@ namespace Identity.Application.Features.Users.Commands
                     var lastName = request.LastName is null ? null : Name.Create(request.LastName);
 
                     var mobile = request.Mobile is null ? null :
-                        Domain.Models.SharedKernel.Mobile.Create(request.Mobile, true, null, null);
+                        NP.Shared.Domain.Models.SharedKernel.Mobile.Create(request.Mobile, true, null, null);
 
                     var email = request.Email is null ? null :
-                        Domain.Models.SharedKernel.Email.Create(request.Email, true, null, null);
+                        NP.Shared.Domain.Models.SharedKernel.Email.Create(request.Email, true, null, null);
 
-                    var activityState = request.ActivityState is null ? Identity.Domain.Models.SharedKernel.ActivityState.Deactive :
+                    var activityState = request.ActivityState is null ? NP.Shared.Domain.Models.SharedKernel.ActivityState.Deactive :
                           Enumeration.FromName<ActivityState>(request.ActivityState);
 
 

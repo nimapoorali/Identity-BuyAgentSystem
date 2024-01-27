@@ -1,4 +1,4 @@
-﻿using Identity.Domain.Models.SeedWork;
+﻿using NP.Shared.Domain.Models.SeedWork;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using System;

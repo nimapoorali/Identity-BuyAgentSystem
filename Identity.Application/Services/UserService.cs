@@ -2,9 +2,9 @@
 using Identity.Application.Abstraction.Users;
 using Identity.Domain.Models.Aggregates.Users;
 using Identity.Domain.Models.Aggregates.Users.ValueObjects;
-using Identity.Domain.Models.SeedWork;
-using Identity.Domain.Models.SharedKernel;
-using Identity.Domain.Models.SharedKernel.Rules;
+using NP.Shared.Domain.Models.SeedWork;
+using NP.Shared.Domain.Models.SharedKernel;
+using NP.Shared.Domain.Models.SharedKernel.Rules;
 using Identity.Resources;
 using NP.Common;
 using NP.Resources;
@@ -62,10 +62,10 @@ namespace Identity.Application.Services
                 throw new BusinessRuleValidationException(IdentityValidations.MobileNotVerified);
 
             if (mobileUser.Mobile.KeyExpirationDate is not null && mobileUser.Mobile.KeyExpirationDate < DateTimeP.Now)
-                throw new BusinessRuleValidationException(IdentityValidations.ExpiredVerificationKey);
+                throw new BusinessRuleValidationException(Validations.ExpiredVerificationKey);
 
             if (mobileUser.Mobile.VerificationKey != key)
-                throw new BusinessRuleValidationException(IdentityValidations.InvalidVerificationKey);
+                throw new BusinessRuleValidationException(Validations.InvalidVerificationKey);
 
             return mobileUser;
         }
@@ -89,10 +89,10 @@ namespace Identity.Application.Services
                 throw new BusinessRuleValidationException(IdentityValidations.EmailNotVerified);
 
             if (emailUser.Email.KeyExpirationDate is not null && emailUser.Email.KeyExpirationDate < DateTimeP.Now)
-                throw new BusinessRuleValidationException(IdentityValidations.ExpiredVerificationKey);
+                throw new BusinessRuleValidationException(Validations.ExpiredVerificationKey);
 
             if (emailUser.Email.VerificationKey != key)
-                throw new BusinessRuleValidationException(IdentityValidations.InvalidVerificationKey);
+                throw new BusinessRuleValidationException(Validations.InvalidVerificationKey);
 
             return emailUser;
         }

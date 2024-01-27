@@ -10,5 +10,6 @@ namespace Identity.Application.Abstraction.Permissions
     {
         Task<bool> UserHasPermission(Guid userId, string permissionName);
         void UserPermissionsChanged(Guid userId);
+        void PermissionChanged(string permissionName);
     }
 }

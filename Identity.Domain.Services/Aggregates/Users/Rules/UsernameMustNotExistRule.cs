@@ -1,6 +1,6 @@
 ﻿using Identity.Domain.Models.Abstraction.Users;
 using Identity.Domain.Models.Aggregates.Users.ValueObjects;
-using Identity.Domain.Models.SeedWork;
+using NP.Shared.Domain.Models.SeedWork;
 using Identity.Resources;
 using System;
 using System.Collections.Generic;

@@ -1,4 +1,4 @@
-﻿using Identity.Domain.Models.SeedWork;
+﻿using NP.Shared.Domain.Models.SeedWork;
 using Identity.Resources;
 using NP.Common;
 using NP.Resources;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Identity.Domain.Models.SharedKernel
+namespace Identity.Domain.Models.Aggregates.Users.Rules
 {
     public class PasswordStrengthCheckRule : IBusinessRule
     {

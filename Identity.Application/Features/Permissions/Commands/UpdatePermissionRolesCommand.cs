@@ -1,13 +1,14 @@
 ﻿using FluentResults;
 using Identity.Application.Abstraction;
+using Identity.Application.Abstraction.Permissions;
 using Identity.Application.Features.Permissions.Commands.ViewModels;
 using Identity.Application.Services;
 using Identity.Domain.Models.Aggregates.Permissions;
 using Identity.Domain.Models.Aggregates.Roles;
 using Identity.Domain.Models.Aggregates.Users;
-using Identity.Domain.Models.SeedWork;
-using Identity.Domain.Models.SharedKernel;
-using Identity.Domain.Models.SharedKernel.Rules;
+using NP.Shared.Domain.Models.SeedWork;
+using NP.Shared.Domain.Models.SharedKernel;
+using NP.Shared.Domain.Models.SharedKernel.Rules;
 using Mapster;
 using MediatR;
 using NP.Resources;
@@ -28,10 +29,13 @@ namespace Identity.Application.Features.Permissions.Commands
         {
             private readonly IIdentityUnitOfWork IdentityUnitOfWork;
 
-            public UpdatePermissionRolesCommandHandler(IIdentityUnitOfWork unitOfWork)
+            public UpdatePermissionRolesCommandHandler(IIdentityUnitOfWork unitOfWork, IPermissionService permissionService)
             {
                 IdentityUnitOfWork = unitOfWork;
+                PermissionService = permissionService;
             }
+
+            public IPermissionService PermissionService { get; }
 
             public async Task<Result<PermissionRolesViewModel>> Handle(UpdatePermissionRolesCommand request, CancellationToken cancellationToken)
             {
@@ -69,7 +73,7 @@ namespace Identity.Application.Features.Permissions.Commands
                     await IdentityUnitOfWork.SaveChangesAsync();
 
                     //ToDo: Reset permissions cache for users has this permission 
-                    //PermissionService.UserPermissionsChanged(user.Id);
+                    PermissionService.PermissionChanged(permission.Name.Name);
 
                     var permissions = permission.Roles.Adapt<PermissionRolesViewModel>();
 

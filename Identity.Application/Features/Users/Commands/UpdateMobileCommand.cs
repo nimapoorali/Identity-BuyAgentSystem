@@ -4,9 +4,9 @@ using Identity.Application.Features.Users.Commands.ViewModels;
 using Identity.Domain.Models.Abstraction.Roles;
 using Identity.Domain.Models.Aggregates.Roles;
 using Identity.Domain.Models.Aggregates.Users.ValueObjects;
-using Identity.Domain.Models.SeedWork;
-using Identity.Domain.Models.SharedKernel;
-using Identity.Domain.Models.SharedKernel.Rules;
+using NP.Shared.Domain.Models.SeedWork;
+using Identity.Domain.Models.Aggregates.Users.Rules;
+using NP.Shared.Domain.Models.SharedKernel.Rules;
 using Identity.Resources;
 using Mapster;
 using MediatR;
@@ -17,6 +17,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NP.Shared.Domain.Models.SharedKernel;
 
 namespace Identity.Application.Features.Users.Commands
 {
@@ -48,7 +49,7 @@ namespace Identity.Application.Features.Users.Commands
                     var verificationKey = StringUtil.RandomNumeric(5);
                     var keyExpirationDate = DateTimeP.Create(DateTime.Now.AddMinutes(2));
                     var mobile = request.Mobile is null ? null :
-                        Domain.Models.SharedKernel.Mobile.Create(request.Mobile, false, verificationKey, keyExpirationDate);
+                        NP.Shared.Domain.Models.SharedKernel.Mobile.Create(request.Mobile, false, verificationKey, keyExpirationDate);
 
                     if (mobile is null)
                         throw new BusinessRuleValidationException(IdentityValidations.MobileCantSet);

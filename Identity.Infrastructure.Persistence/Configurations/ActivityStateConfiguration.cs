@@ -1,4 +1,4 @@
-﻿using Identity.Domain.Models.SharedKernel;
+﻿using NP.Shared.Domain.Models.SharedKernel;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using NP.Common;

@@ -132,9 +132,6 @@
   <data name="EmailNotVerified" xml:space="preserve">
     <value>The emailhas not been yet verified.</value>
   </data>
-  <data name="ExpiredVerificationKey" xml:space="preserve">
-    <value>The verification key has been expired.</value>
-  </data>
   <data name="FutureAssignDate" xml:space="preserve">
     <value>The assign date can not be in the future.</value>
   </data>
@@ -144,17 +141,11 @@
   <data name="InsufficientPasswordStrength" xml:space="preserve">
     <value>The password does not meet the minimum strength level defined.</value>
   </data>
-  <data name="InvalidEmail" xml:space="preserve">
-    <value>The format of email is invalid.</value>
-  </data>
   <data name="InvalidEmailOrVerificationKey" xml:space="preserve">
     <value>The email or verification key is invalid or has been expired.</value>
   </data>
   <data name="InvalidMobileOrVerificationKey" xml:space="preserve">
     <value>The mobile or verification key is invalid or has been expired.</value>
-  </data>
-  <data name="InvalidVerificationKey" xml:space="preserve">
-    <value>Verification key is invalid.</value>
   </data>
   <data name="MobileAlreadyVerified" xml:space="preserve">
     <value>The mobile is already verified.</value>

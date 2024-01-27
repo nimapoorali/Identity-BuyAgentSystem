@@ -1,5 +1,5 @@
 ﻿using Identity.Domain.Models.Abstraction.Permissions;
-using Identity.Domain.Models.SeedWork;
+using NP.Shared.Domain.Models.SeedWork;
 using Identity.Resources;
 using MediatR;
 using NP.Resources;
@@ -35,7 +35,7 @@ namespace Identity.Domain.Models.Aggregates.Permissions.Events
                 throw new BusinessRuleValidationException(
                     string.Format(Validations.AlreadyExistsValueForField,
                                   notification.Name.Name,
-                                  IdentityDataDictionary.Name));
+                                  SharedDataDictionary.Name));
         }
     }
 }

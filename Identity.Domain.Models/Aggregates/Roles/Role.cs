@@ -1,9 +1,9 @@
 ﻿using FluentResults;
 using Identity.Domain.Models.Aggregates.Roles.Events;
 using Identity.Domain.Models.Aggregates.Roles.ValueObjects;
-using Identity.Domain.Models.SeedWork;
-using Identity.Domain.Models.SharedKernel;
-using Identity.Domain.Models.SharedKernel.Rules;
+using NP.Shared.Domain.Models.SeedWork;
+using NP.Shared.Domain.Models.SharedKernel;
+using NP.Shared.Domain.Models.SharedKernel.Rules;
 using Identity.Resources;
 using NP.Resources;
 using System;

@@ -6,9 +6,9 @@ using Identity.Domain.Models.Abstraction.Roles;
 using Identity.Domain.Models.Aggregates.Permissions.ValueObjects;
 using Identity.Domain.Models.Aggregates.Roles;
 using Identity.Domain.Models.Aggregates.Roles.ValueObjects;
-using Identity.Domain.Models.SeedWork;
-using Identity.Domain.Models.SharedKernel;
-using Identity.Domain.Models.SharedKernel.Rules;
+using NP.Shared.Domain.Models.SeedWork;
+using NP.Shared.Domain.Models.SharedKernel;
+using NP.Shared.Domain.Models.SharedKernel.Rules;
 using Mapster;
 using MediatR;
 using NP.Resources;
@@ -49,7 +49,7 @@ namespace Identity.Application.Features.Permissions.Commands
                     if (permission is null)
                         throw new BusinessRuleValidationException(new BrokenBusinessRule(Validations.NotExistsRecord));
 
-                    var activityState = request.ActivityState is null ? Identity.Domain.Models.SharedKernel.ActivityState.Deactive :
+                    var activityState = request.ActivityState is null ? NP.Shared.Domain.Models.SharedKernel.ActivityState.Deactive :
                           Enumeration.FromName<ActivityState>(request.ActivityState);
 
                     permission.Change(name, activityState);

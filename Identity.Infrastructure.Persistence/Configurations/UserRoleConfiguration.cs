@@ -1,8 +1,8 @@
 ﻿using Identity.Domain.Models.Aggregates.Roles;
 using Identity.Domain.Models.Aggregates.Users;
 using Identity.Domain.Models.Aggregates.Users.ValueObjects;
-using Identity.Domain.Models.SeedWork;
-using Identity.Domain.Models.SharedKernel;
+using NP.Shared.Domain.Models.SeedWork;
+using NP.Shared.Domain.Models.SharedKernel;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using NP.Common;

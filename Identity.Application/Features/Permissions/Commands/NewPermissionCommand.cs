@@ -5,8 +5,8 @@ using Identity.Application.Features.Roles.Commands.ViewModels;
 using Identity.Domain.Models.Abstraction.Roles;
 using Identity.Domain.Models.Aggregates.Permissions;
 using Identity.Domain.Models.Aggregates.Permissions.ValueObjects;
-using Identity.Domain.Models.SeedWork;
-using Identity.Domain.Models.SharedKernel;
+using NP.Shared.Domain.Models.SeedWork;
+using NP.Shared.Domain.Models.SharedKernel;
 using Mapster;
 using MediatR;
 using NP.Resources;
@@ -40,7 +40,7 @@ namespace Identity.Application.Features.Permissions.Commands
                 {
                     var name = PermissionName.Create(request.Name!);
 
-                    var activityState = request.ActivityState is null ? Identity.Domain.Models.SharedKernel.ActivityState.Deactive :
+                    var activityState = request.ActivityState is null ? NP.Shared.Domain.Models.SharedKernel.ActivityState.Deactive :
                            Enumeration.FromName<ActivityState>(request.ActivityState);
 
                     var permission = Permission.Create(name, activityState);

@@ -3,8 +3,8 @@ using Identity.Application.Abstraction;
 using Identity.Application.Features.Users.Commands.ViewModels;
 using Identity.Domain.Models.Abstraction.Users;
 using Identity.Domain.Models.Aggregates.Users;
-using Identity.Domain.Models.SeedWork;
-using Identity.Domain.Models.SharedKernel;
+using NP.Shared.Domain.Models.SeedWork;
+using NP.Shared.Domain.Models.SharedKernel;
 using Mapster;
 using MediatR;
 using NP.Common;
@@ -58,7 +58,7 @@ namespace Identity.Application.Features.Users.Commands
                     var verificationKey = StringUtil.RandomNumeric(5);
                     var keyExpirationDate = DateTimeP.Create(DateTime.Now.AddMinutes(2));
                     var mobile = request.Mobile is null ? null :
-                        Domain.Models.SharedKernel.Mobile.Create(request.Mobile, false, verificationKey, keyExpirationDate);
+                        NP.Shared.Domain.Models.SharedKernel.Mobile.Create(request.Mobile, false, verificationKey, keyExpirationDate);
 
                     var activityState = Enumeration.FromValue<ActivityState>(ActivityState.Deactive.Value);
 

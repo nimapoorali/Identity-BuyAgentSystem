@@ -2,9 +2,9 @@
 using Identity.Application.Abstraction;
 using Identity.Application.Abstraction.Users;
 using Identity.Application.Features.Authorizations.Commands.ViewModels;
-using Identity.Domain.Models.SeedWork;
-using Identity.Domain.Models.SharedKernel;
-using Identity.Domain.Models.SharedKernel.Rules;
+using NP.Shared.Domain.Models.SeedWork;
+using NP.Shared.Domain.Models.SharedKernel;
+using NP.Shared.Domain.Models.SharedKernel.Rules;
 using Identity.Resources;
 using Mapster;
 using MediatR;
@@ -40,7 +40,7 @@ namespace Identity.Application.Features.Authorizations.Commands
                 try
                 {
                     if (request.Email is null)
-                        throw new BusinessRuleValidationException(string.Format(Validations.RequiredField, IdentityDataDictionary.Email));
+                        throw new BusinessRuleValidationException(string.Format(Validations.RequiredField, SharedDataDictionary.Email));
 
                     var emailUsernameObject = Domain.Models.Aggregates.Users.ValueObjects
                        .Username.Create(request.Email!);
@@ -60,10 +60,10 @@ namespace Identity.Application.Features.Authorizations.Commands
                         throw new BusinessRuleValidationException(IdentityValidations.EmailNotVerified);
 
                     if (emailUser.Email.KeyExpirationDate is not null && emailUser.Email.KeyExpirationDate < DateTimeP.Now)
-                        throw new BusinessRuleValidationException(IdentityValidations.ExpiredVerificationKey);
+                        throw new BusinessRuleValidationException(Validations.ExpiredVerificationKey);
 
                     if (emailUser.Email.VerificationKey != request.VerificationKey)
-                        throw new BusinessRuleValidationException(IdentityValidations.InvalidVerificationKey);
+                        throw new BusinessRuleValidationException(Validations.InvalidVerificationKey);
                     
                     
                     var generatedToken = await TokenService.GenerateToken(emailUser.Id);

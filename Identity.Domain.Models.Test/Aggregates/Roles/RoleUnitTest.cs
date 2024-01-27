@@ -1,6 +1,6 @@
 ﻿using Identity.Domain.Models.Aggregates.Roles;
 using Identity.Domain.Models.Aggregates.Roles.ValueObjects;
-using Identity.Domain.Models.SharedKernel;
+using NP.Shared.Domain.Models.SharedKernel;
 using Identity.Resources;
 using NP.Common;
 using NP.Resources;

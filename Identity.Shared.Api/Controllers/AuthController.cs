@@ -192,7 +192,7 @@ namespace Identity.Shared.Api.Controllers
                 return BadResult(Validations.InvalidInputData);
 
             if (model.Mobile is null)
-                return BadResult(string.Format(Validations.RequiredField, IdentityDataDictionary.Mobile));
+                return BadResult(string.Format(Validations.RequiredField, SharedDataDictionary.Mobile));
 
             if (!ModelState.IsValid)
                 return BadResult(ModelState.Values.SelectMany(v => v.Errors).Select(v => v.ErrorMessage).ToArray());
@@ -213,7 +213,7 @@ namespace Identity.Shared.Api.Controllers
                 return BadResult(Validations.InvalidInputData);
 
             if (model.Email is null)
-                return BadResult(string.Format(Validations.RequiredField, IdentityDataDictionary.Mobile));
+                return BadResult(string.Format(Validations.RequiredField, SharedDataDictionary.Mobile));
 
             if (!ModelState.IsValid)
                 return BadResult(ModelState.Values.SelectMany(v => v.Errors).Select(v => v.ErrorMessage).ToArray());

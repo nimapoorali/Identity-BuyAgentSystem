@@ -4,9 +4,9 @@ using Identity.Application.Features.Users.Commands.ViewModels;
 using Identity.Domain.Models.Abstraction.Roles;
 using Identity.Domain.Models.Aggregates.Roles;
 using Identity.Domain.Models.Aggregates.Users.ValueObjects;
-using Identity.Domain.Models.SeedWork;
-using Identity.Domain.Models.SharedKernel;
-using Identity.Domain.Models.SharedKernel.Rules;
+using NP.Shared.Domain.Models.SeedWork;
+using NP.Shared.Domain.Models.SharedKernel;
+using NP.Shared.Domain.Models.SharedKernel.Rules;
 using Identity.Resources;
 using Mapster;
 using MediatR;
@@ -48,7 +48,7 @@ namespace Identity.Application.Features.Users.Commands
                     var verificationKey = Guid.NewGuid().ToString();
                     var keyExpirationDate = DateTimeP.Create(DateTime.Now.AddMinutes(10));
                     var email = request.Email is null ? null :
-                        Domain.Models.SharedKernel.Email.Create(request.Email, false, verificationKey, keyExpirationDate);
+                        NP.Shared.Domain.Models.SharedKernel.Email.Create(request.Email, false, verificationKey, keyExpirationDate);
 
                     if (email is null)
                         throw new BusinessRuleValidationException(IdentityValidations.EmailCantSet);

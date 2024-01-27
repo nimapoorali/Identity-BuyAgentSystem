@@ -88,6 +88,15 @@ namespace NP.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The verification key has been expired..
+        /// </summary>
+        public static string ExpiredVerificationKey {
+            get {
+                return ResourceManager.GetString("ExpiredVerificationKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The value of field {0} is not in correct format..
         /// </summary>
         public static string FormatNotMatched {
@@ -102,6 +111,15 @@ namespace NP.Resources {
         public static string InvalidCurrentDateField {
             get {
                 return ResourceManager.GetString("InvalidCurrentDateField", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The format of email is invalid..
+        /// </summary>
+        public static string InvalidEmail {
+            get {
+                return ResourceManager.GetString("InvalidEmail", resourceCulture);
             }
         }
         
@@ -156,6 +174,15 @@ namespace NP.Resources {
         public static string InvalidValueForField {
             get {
                 return ResourceManager.GetString("InvalidValueForField", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Verification key is invalid..
+        /// </summary>
+        public static string InvalidVerificationKey {
+            get {
+                return ResourceManager.GetString("InvalidVerificationKey", resourceCulture);
             }
         }
         

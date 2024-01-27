@@ -20,10 +20,13 @@
     <ProjectReference Include="..\Identity.Resources\Identity.Resources.csproj" />
     <ProjectReference Include="..\NP.Common\NP.Common.csproj" />
     <ProjectReference Include="..\NP.Resources\NP.Resources.csproj" />
+    <ProjectReference Include="..\NP.Shared.Domain\NP.Shared.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Aggregates\Roles\Rules\" />
+    <Folder Include="SeedWork\" />
+    <Folder Include="SharedKernel\Rules\" />
   </ItemGroup>
 
 </Project>

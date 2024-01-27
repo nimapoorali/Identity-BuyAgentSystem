@@ -1,8 +1,8 @@
 ﻿using FluentResults;
 using Identity.Application.Abstraction;
 using Identity.Application.Abstraction.Users;
-using Identity.Domain.Models.SeedWork;
-using Identity.Domain.Models.SharedKernel;
+using NP.Shared.Domain.Models.SeedWork;
+using NP.Shared.Domain.Models.SharedKernel;
 using Identity.Resources;
 using MediatR;
 using NP.Common;
@@ -36,7 +36,7 @@ namespace Identity.Application.Features.Authorizations.Commands
                 try
                 {
                     if (request.Mobile is null)
-                        throw new BusinessRuleValidationException(string.Format(Validations.RequiredField, IdentityDataDictionary.Mobile));
+                        throw new BusinessRuleValidationException(string.Format(Validations.RequiredField, SharedDataDictionary.Mobile));
 
                     var mobileUsernameObject = Domain.Models.Aggregates.Users.ValueObjects
                        .Username.Create(request.Mobile);
@@ -57,7 +57,7 @@ namespace Identity.Application.Features.Authorizations.Commands
 
                     var verificationKey = StringUtil.RandomNumeric(5);
                     var keyExpirationDate = DateTimeP.Create(DateTime.Now.AddMinutes(2));
-                    var mobile = Domain.Models.SharedKernel
+                    var mobile = NP.Shared.Domain.Models.SharedKernel
                         .Mobile.Create(mobileUser.Mobile.Value, mobileUser.Mobile.IsVerified, verificationKey, keyExpirationDate);
 
                     mobileUser.ChangeMobile(mobile);

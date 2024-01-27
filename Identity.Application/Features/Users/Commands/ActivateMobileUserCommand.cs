@@ -1,8 +1,8 @@
 ﻿using FluentResults;
 using Identity.Application.Abstraction;
 using Identity.Application.Features.Users.Commands.ViewModels;
-using Identity.Domain.Models.SeedWork;
-using Identity.Domain.Models.SharedKernel.Rules;
+using NP.Shared.Domain.Models.SeedWork;
+using NP.Shared.Domain.Models.SharedKernel.Rules;
 using Mapster;
 using MediatR;
 using NP.Resources;

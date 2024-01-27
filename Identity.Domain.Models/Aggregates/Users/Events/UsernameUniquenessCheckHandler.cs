@@ -1,8 +1,8 @@
 ﻿using FluentResults;
 using Identity.Domain.Models.Abstraction.Roles;
 using Identity.Domain.Models.Abstraction.Users;
-using Identity.Domain.Models.SeedWork;
-using Identity.Domain.Models.SharedKernel.Rules;
+using NP.Shared.Domain.Models.SeedWork;
+using NP.Shared.Domain.Models.SharedKernel.Rules;
 using Identity.Resources;
 using MediatR;
 using NP.Resources;

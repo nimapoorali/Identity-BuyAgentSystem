@@ -2,9 +2,9 @@
 using Identity.Domain.Models.Aggregates.Roles;
 using Identity.Domain.Models.Aggregates.Roles.Events;
 using Identity.Domain.Models.Aggregates.Users.ValueObjects;
-using Identity.Domain.Models.SeedWork;
-using Identity.Domain.Models.SharedKernel;
-using Identity.Domain.Models.SharedKernel.Rules;
+using NP.Shared.Domain.Models.SeedWork;
+using NP.Shared.Domain.Models.SharedKernel;
+using NP.Shared.Domain.Models.SharedKernel.Rules;
 using Identity.Resources;
 using NP.Common;
 using NP.Resources;

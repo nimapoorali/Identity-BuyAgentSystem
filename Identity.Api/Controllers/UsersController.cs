@@ -175,7 +175,7 @@ namespace Identity.Api.Controllers
             if (id != command.UserId)
                 return BadResult(string.Format(Validations.ValuesNotMatchForField, IdentityDataDictionary.UserId));
             if (key != command.VerificationKey)
-                return BadResult(string.Format(Validations.ValuesNotMatchForField, IdentityDataDictionary.MobileVerificationKey));
+                return BadResult(string.Format(Validations.ValuesNotMatchForField, SharedDataDictionary.MobileVerificationKey));
 
             var result = await Mediator.Send(command);
 
@@ -196,7 +196,7 @@ namespace Identity.Api.Controllers
             if (id != command.UserId)
                 return BadResult(string.Format(Validations.ValuesNotMatchForField, IdentityDataDictionary.UserId));
             if (key != command.VerificationKey)
-                return BadResult(string.Format(Validations.ValuesNotMatchForField, IdentityDataDictionary.EmailVerificationKey));
+                return BadResult(string.Format(Validations.ValuesNotMatchForField, SharedDataDictionary.EmailVerificationKey));
 
             var result = await Mediator.Send(command);
 

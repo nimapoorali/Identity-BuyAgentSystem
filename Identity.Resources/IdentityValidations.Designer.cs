@@ -106,15 +106,6 @@ namespace Identity.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The verification key has been expired..
-        /// </summary>
-        public static string ExpiredVerificationKey {
-            get {
-                return ResourceManager.GetString("ExpiredVerificationKey", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to The assign date can not be in the future..
         /// </summary>
         public static string FutureAssignDate {
@@ -142,15 +133,6 @@ namespace Identity.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The format of email is invalid..
-        /// </summary>
-        public static string InvalidEmail {
-            get {
-                return ResourceManager.GetString("InvalidEmail", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to The email or verification key is invalid or has been expired..
         /// </summary>
         public static string InvalidEmailOrVerificationKey {
@@ -165,15 +147,6 @@ namespace Identity.Resources {
         public static string InvalidMobileOrVerificationKey {
             get {
                 return ResourceManager.GetString("InvalidMobileOrVerificationKey", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Verification key is invalid..
-        /// </summary>
-        public static string InvalidVerificationKey {
-            get {
-                return ResourceManager.GetString("InvalidVerificationKey", resourceCulture);
             }
         }
         

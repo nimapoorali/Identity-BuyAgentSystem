@@ -2,6 +2,7 @@
 using Identity.Application.Abstraction.Generals;
 using Identity.Application.Abstraction.Permissions;
 using Identity.Domain.Models.Aggregates.Permissions;
+using Identity.Domain.Models.Aggregates.Users;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,6 +43,13 @@ namespace Identity.Application.Services
 
             if (userPermissionsCacheData is not null && userPermissionsCacheData.Keys.Contains(userId))
                 userPermissionsCacheData.Remove(userId);
+        }
+        public void PermissionChanged(string permissionName)
+        {
+            var userPermissionsCacheData = CacheService.GetData<Dictionary<Guid, string[]>>(UserPermissionsCacheName);
+            if (userPermissionsCacheData is not null)
+                foreach (var item in userPermissionsCacheData.Where(d => d.Value.Contains(permissionName)).ToList())
+                    userPermissionsCacheData.Remove(item.Key);
         }
 
         private async Task<IEnumerable<Permission>?> GetAllPermissionsCacheAsync()

@@ -1,8 +1,8 @@
 ﻿using FluentResults;
 using Identity.Application.Abstraction;
-using Identity.Domain.Models.SeedWork;
-using Identity.Domain.Models.SharedKernel;
-using Identity.Domain.Models.SharedKernel.Rules;
+using NP.Shared.Domain.Models.SeedWork;
+using NP.Shared.Domain.Models.SharedKernel;
+using NP.Shared.Domain.Models.SharedKernel.Rules;
 using Identity.Resources;
 using Mapster;
 using MediatR;
@@ -36,7 +36,7 @@ namespace Identity.Application.Features.Users.Commands
                 try
                 {
                     if (request.Email is null)
-                        throw new BusinessRuleValidationException(string.Format(Validations.RequiredField, IdentityDataDictionary.Email));
+                        throw new BusinessRuleValidationException(string.Format(Validations.RequiredField, SharedDataDictionary.Email));
 
                     var emailUsernameObject = Domain.Models.Aggregates.Users.ValueObjects
                        .Username.Create(request.Email);
@@ -54,7 +54,7 @@ namespace Identity.Application.Features.Users.Commands
 
                     var verificationKey = Guid.NewGuid().ToString();
                     var keyExpirationDate = DateTimeP.Create(DateTime.Now.AddMinutes(10));
-                    var email = Domain.Models.SharedKernel
+                    var email = NP.Shared.Domain.Models.SharedKernel
                         .Email.Create(user.Email!.Value, user.Email!.IsVerified, verificationKey, keyExpirationDate);
 
                     user.ChangeEmail(email);

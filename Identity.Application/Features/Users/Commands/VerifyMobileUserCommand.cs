@@ -2,8 +2,8 @@
 using Identity.Application.Abstraction;
 using Identity.Application.Features.Users.Commands.ViewModels;
 using Identity.Domain.Models.Aggregates.Users.ValueObjects;
-using Identity.Domain.Models.SeedWork;
-using Identity.Domain.Models.SharedKernel.Rules;
+using NP.Shared.Domain.Models.SeedWork;
+using NP.Shared.Domain.Models.SharedKernel.Rules;
 using Identity.Resources;
 using Mapster;
 using MediatR;
@@ -38,11 +38,11 @@ namespace Identity.Application.Features.Users.Commands
                 {
                     if (request.VerificationKey is null)
                         throw new BusinessRuleValidationException(
-                            string.Format(Validations.RequiredField, IdentityDataDictionary.MobileVerificationKey));
+                            string.Format(Validations.RequiredField, SharedDataDictionary.MobileVerificationKey));
 
                     if (request.Mobile is null)
                         throw new BusinessRuleValidationException(
-                            string.Format(Validations.RequiredField, IdentityDataDictionary.Mobile));
+                            string.Format(Validations.RequiredField, SharedDataDictionary.Mobile));
 
 
                     var username = Username.Create(request.Mobile);

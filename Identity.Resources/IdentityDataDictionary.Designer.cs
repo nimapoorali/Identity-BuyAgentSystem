@@ -61,15 +61,6 @@ namespace Identity.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Active.
-        /// </summary>
-        public static string Active {
-            get {
-                return ResourceManager.GetString("Active", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to ActivityState.
         /// </summary>
         public static string ActivityState {
@@ -88,101 +79,11 @@ namespace Identity.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Deactive.
-        /// </summary>
-        public static string Deactive {
-            get {
-                return ResourceManager.GetString("Deactive", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Email.
-        /// </summary>
-        public static string Email {
-            get {
-                return ResourceManager.GetString("Email", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to EmailIsVerified.
-        /// </summary>
-        public static string EmailIsVerified {
-            get {
-                return ResourceManager.GetString("EmailIsVerified", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to EmailKeyExpirationDate.
-        /// </summary>
-        public static string EmailKeyExpirationDate {
-            get {
-                return ResourceManager.GetString("EmailKeyExpirationDate", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to EmailVerificationKey.
-        /// </summary>
-        public static string EmailVerificationKey {
-            get {
-                return ResourceManager.GetString("EmailVerificationKey", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Identity.
         /// </summary>
         public static string Identity {
             get {
                 return ResourceManager.GetString("Identity", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Mobile.
-        /// </summary>
-        public static string Mobile {
-            get {
-                return ResourceManager.GetString("Mobile", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to MobileIsVerified.
-        /// </summary>
-        public static string MobileIsVerified {
-            get {
-                return ResourceManager.GetString("MobileIsVerified", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to MobileKeyExpirationDate.
-        /// </summary>
-        public static string MobileKeyExpirationDate {
-            get {
-                return ResourceManager.GetString("MobileKeyExpirationDate", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to MobileVerificationKey.
-        /// </summary>
-        public static string MobileVerificationKey {
-            get {
-                return ResourceManager.GetString("MobileVerificationKey", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Name.
-        /// </summary>
-        public static string Name {
-            get {
-                return ResourceManager.GetString("Name", resourceCulture);
             }
         }
         
@@ -273,15 +174,6 @@ namespace Identity.Resources {
         public static string RoleTitle {
             get {
                 return ResourceManager.GetString("RoleTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Suspend.
-        /// </summary>
-        public static string Suspend {
-            get {
-                return ResourceManager.GetString("Suspend", resourceCulture);
             }
         }
         

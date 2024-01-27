@@ -1,6 +1,6 @@
 ﻿using Identity.Domain.Models.Abstraction.Roles;
 using Identity.Domain.Models.Aggregates.Roles.ValueObjects;
-using Identity.Domain.Models.SeedWork;
+using NP.Shared.Domain.Models.SeedWork;
 using NP.Resources;
 using System;
 using System.Collections.Generic;

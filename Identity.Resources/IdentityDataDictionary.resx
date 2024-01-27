@@ -117,10 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Active" xml:space="preserve">
-    <value>Active</value>
-    <comment>فعال</comment>
-  </data>
   <data name="ActivityState" xml:space="preserve">
     <value>ActivityState</value>
     <comment>وضعیت</comment>
@@ -129,49 +125,9 @@
     <value>AssignDate</value>
     <comment>تاریخ انتساب</comment>
   </data>
-  <data name="Deactive" xml:space="preserve">
-    <value>Deactive</value>
-    <comment>غیر فعال</comment>
-  </data>
-  <data name="Email" xml:space="preserve">
-    <value>Email</value>
-    <comment>ایمیل</comment>
-  </data>
-  <data name="EmailIsVerified" xml:space="preserve">
-    <value>EmailIsVerified</value>
-    <comment>تایید ایمیل</comment>
-  </data>
-  <data name="EmailKeyExpirationDate" xml:space="preserve">
-    <value>EmailKeyExpirationDate</value>
-    <comment>تاریخ انقضای کلید تایید موبایل</comment>
-  </data>
-  <data name="EmailVerificationKey" xml:space="preserve">
-    <value>EmailVerificationKey</value>
-    <comment>کلید تایید ایمیل</comment>
-  </data>
   <data name="Identity" xml:space="preserve">
     <value>Identity</value>
     <comment>احراز هویت</comment>
-  </data>
-  <data name="Mobile" xml:space="preserve">
-    <value>Mobile</value>
-    <comment>موبایل</comment>
-  </data>
-  <data name="MobileIsVerified" xml:space="preserve">
-    <value>MobileIsVerified</value>
-    <comment>تایید موبایل</comment>
-  </data>
-  <data name="MobileKeyExpirationDate" xml:space="preserve">
-    <value>MobileKeyExpirationDate</value>
-    <comment>تاریخ انقضای کلید تایید موبایل</comment>
-  </data>
-  <data name="MobileVerificationKey" xml:space="preserve">
-    <value>MobileVerificationKey</value>
-    <comment>کلید تایید موبایل</comment>
-  </data>
-  <data name="Name" xml:space="preserve">
-    <value>Name</value>
-    <comment>نام</comment>
   </data>
   <data name="NickName" xml:space="preserve">
     <value>NickName</value>
@@ -212,10 +168,6 @@
   <data name="RoleTitle" xml:space="preserve">
     <value>RoleTitle</value>
     <comment>عنوان نقش</comment>
-  </data>
-  <data name="Suspend" xml:space="preserve">
-    <value>Suspend</value>
-    <comment>معلق</comment>
   </data>
   <data name="User" xml:space="preserve">
     <value>User</value>

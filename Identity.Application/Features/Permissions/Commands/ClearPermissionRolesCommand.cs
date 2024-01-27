@@ -5,9 +5,9 @@ using Identity.Application.Features.Users.Commands;
 using Identity.Domain.Models.Abstraction.Users;
 using Identity.Domain.Models.Aggregates.Users;
 using Identity.Domain.Models.Aggregates.Users.ValueObjects;
-using Identity.Domain.Models.SeedWork;
-using Identity.Domain.Models.SharedKernel;
-using Identity.Domain.Models.SharedKernel.Rules;
+using NP.Shared.Domain.Models.SeedWork;
+using NP.Shared.Domain.Models.SharedKernel;
+using NP.Shared.Domain.Models.SharedKernel.Rules;
 using Mapster;
 using MediatR;
 using NP.Resources;
@@ -59,7 +59,7 @@ namespace Identity.Application.Features.Permissions.Commands
                     await IdentityUnitOfWork.SaveChangesAsync();
 
                     //ToDo: Reset permissions cache for users has this permission 
-                    //PermissionService.UserPermissionsChanged(user.Id);
+                    PermissionService.PermissionChanged(permission.Name.Name);
 
                     result.WithSuccess(Messages.OperationSucceeded);
 
