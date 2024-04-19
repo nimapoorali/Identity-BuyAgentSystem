@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option csharp_namespace = "Identity.GrpcServer";
+
+package permission;
+
+// The permission service definition.
+service Permission {
+  // Sends a check
+  rpc CheckPermission (CheckPermissionRequest) returns (CheckPermissionResponse);
+}
+
+// The request message containing the user and permission info.
+message CheckPermissionRequest {
+  string userid = 1;
+  string permissionname = 2;
+}
+
+// The response message containing the greetings.
+message CheckPermissionResponse {
+  bool isallowed = 1;
+}

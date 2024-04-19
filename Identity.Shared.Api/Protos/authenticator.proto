@@ -1,0 +1,71 @@
+syntax = "proto3";
+
+option csharp_namespace = "Identity.GrpcServer";
+
+package authenticator;
+
+// The authenticator service definition.
+service Authenticator {
+  // Sends an auth
+  rpc GetUserId (GetUserIdRequest) returns (GetUserIdResponse);
+  rpc GetMobileUserId (GetMobileUserIdRequest) returns (GetUserIdResponse);
+  rpc GetEmailUserId (GetEmailUserIdRequest) returns (GetUserIdResponse);
+  rpc GetToken (GetUserIdRequest) returns (GetTokenResponse);
+  rpc GetMobileToken (GetMobileUserIdRequest) returns (GetTokenResponse);
+  rpc GetEmailToken (GetEmailUserIdRequest) returns (GetTokenResponse);
+  rpc NewMobileVerificationKey (NewMobileUserKeyRequest) returns (OperationResult);
+  rpc NewEmailVerificationKey (NewEmailUserKeyRequest) returns (OperationResult);
+  rpc ValidateToken (ValidateTokenRequest) returns (ValidateTokenResponse);
+}
+
+// The request message containing the user and pass.
+message GetUserIdRequest {
+  string username = 1;
+  string password = 2;
+}
+
+// The request message containing the mobile and verificationKey.
+message GetMobileUserIdRequest {
+  string mobile = 1;
+  string verificationKey = 2;
+}
+
+// The request message containing the email and verificationKey.
+message GetEmailUserIdRequest {
+  string email = 1;
+  string verificationKey = 2;
+}
+
+// The request message containing the mobile.
+message NewMobileUserKeyRequest {
+  string mobile = 1;
+}
+
+// The request message containing the email.
+message NewEmailUserKeyRequest {
+  string email = 1;
+}
+
+// The response message containing ...
+message OperationResult {
+  bool done = 1;
+}
+
+// The response message containing the token.
+message GetUserIdResponse {
+  string userId = 1;
+}
+
+message GetTokenResponse {
+  string token = 1;
+  string expiresat = 2;
+}
+
+message ValidateTokenRequest {
+  string token = 1;
+}
+
+message ValidateTokenResponse {
+  bool isvalid = 1;
+  string userid = 2;
+}

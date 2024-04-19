@@ -1,0 +1,31 @@
+{
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:5000",
+    "Names": {
+      "us": "/gateway",
+      "ds": "/api",
+      "identity_us": "/v1/identity",
+      "identity_ds": "/v1/identity",
+      "buyAgent_up": "buyAgent",
+      "buyAgent_down": "buyAgent"
+    },
+    "Hosts": {
+      "identity": "https://localhost:7288",
+      "buyAgent": "https://localhost:7048"
+    }
+  },
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/v1/identity/roles/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7288
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/v1/identity/roles/{id}",
+      "UpstreamHttpMethod": [ "Delete" ]
+    }
+  ]
+}
